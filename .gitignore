@@ -1,0 +1,13 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# Never commit secrets or local config
+.env
+*.key
+*.pem
+
+# Dependencies (not used, just in case)
+node_modules/

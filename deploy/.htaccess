@@ -1,0 +1,65 @@
+# =====================================================================
+# Security hardening for IONOS Webhosting (Apache)
+# Upload to the web root (the folder your domain points to).
+# Site: clickblvd.com Test after upload:
+#   https://securityheaders.com  |  https://www.ssllabs.com/ssltest/
+# =====================================================================
+
+# --- 1. Force HTTPS -----------------------------------------------------
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Force non-www: www.clickblvd.com -> clickblvd.com
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# --- 2. Security headers ------------------------------------------------
+<IfModule mod_headers.c>
+    # HSTS - STAGED ROLLOUT:
+    #   Week 1:  max-age=300
+    #   Week 2:  max-age=31536000; includeSubDomains
+    #   Later:   add "; preload" and submit at hstspreload.org
+    #   Preload is hard to undo - every subdomain must serve HTTPS first.
+    Header always set Strict-Transport-Security "max-age=300" "expr=%{HTTPS} == 'on'"
+
+    # CSP - strict default for a static site with no third-party resources.
+    # If you add fonts/analytics/CDNs later, allow them explicitly here.
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+
+    # Remove technology fingerprints
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+</IfModule>
+
+ServerSignature Off
+
+# --- Custom error page ---------------------------------------------------
+ErrorDocument 404 /404.html
+
+# --- 3. No directory listings -------------------------------------------
+Options -Indexes
+
+# --- 4. Block hidden files (except /.well-known for security.txt & ACME) -
+RewriteRule "(^|/)\.(?!well-known/)" - [F,L]
+
+# --- 5. Block backups, dumps, configs, logs -----------------------------
+<FilesMatch "\.(bak|backup|old|orig|save|swp|sql|sqlite|db|log|ini|conf|env|dist|inc|sh|yml|yaml|lock)$">
+    Require all denied
+</FilesMatch>
+
+# --- 6. Allow only safe HTTP methods ------------------------------------
+RewriteCond %{REQUEST_METHOD} !^(GET|HEAD|POST|OPTIONS)$ [NC]
+RewriteRule .* - [F,L]
+
+# --- 7. Serve security.txt correctly ------------------------------------
+<Files "security.txt">
+    ForceType text/plain
+</Files>

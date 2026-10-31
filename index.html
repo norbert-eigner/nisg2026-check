@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NISG-2026-Check – Ist Ihr Unternehmen betroffen?</title>
+  <meta name="description" content="Kostenloser Selbstcheck: Fällt Ihr Unternehmen unter das österreichische Cybersicherheitsgesetz NISG 2026 (NIS2)? Ergebnis in 2 Minuten, ohne Datenspeicherung.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">Österreich · Cybersicherheitsgesetz (NIS2)</p>
+      <h1>NISG-2026-Check</h1>
+      <p class="lead">Finden Sie in 2 Minuten heraus, ob Ihr Unternehmen unter das österreichische Cybersicherheitsgesetz <strong>NISG 2026</strong> fällt – und wenn ja, als <strong>„wesentliche“</strong> oder <strong>„wichtige“ Einrichtung</strong>. So heißen die zwei Kategorien betroffener Unternehmen. Frist für die Registrierung: <strong>31.12.2026</strong>.</p>
+      <p class="privacy">Ihre Angaben bleiben in Ihrem Browser. Es werden keine Daten gespeichert oder übertragen. Bei Fachbegriffen hilft das <span class="info-demo" aria-hidden="true">?</span> daneben.</p>
+    </header>
+
+    <form id="check-form" novalidate>
+      <!-- Frage 1 -->
+      <fieldset>
+        <legend>1. Hat Ihr Unternehmen seinen Sitz in Österreich?
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-sitz" aria-label="Erklärung zu Frage 1">?</button>
+        </legend>
+        <p id="i-sitz" class="info" hidden>Gemeint ist das Unternehmen als rechtliche Einheit, z. B. Ihre GmbH, AG, KG oder Ihr Einzelunternehmen mit Sitz in Österreich. In einer Unternehmensgruppe prüft jede Gesellschaft für sich. Ausländische Unternehmen mit Filiale in Österreich sollten das im Einzelfall prüfen lassen.</p>
+        <div class="option"><label><input type="radio" name="established" value="ja" required> Ja</label></div>
+        <div class="option"><label><input type="radio" name="established" value="nein"> Nein</label></div>
+      </fieldset>
+
+      <!-- Frage 2 -->
+      <fieldset>
+        <legend>2. Trifft eine dieser besonderen Rollen auf Ihr Unternehmen zu?</legend>
+        <p class="hint">Für diese Rollen gilt das Gesetz teilweise unabhängig von der Firmengröße. Trifft nichts zu, einfach weiter zu Frage 3.</p>
+
+        <div class="option">
+          <label><input type="checkbox" name="special" value="qtsp"> Qualifizierter Vertrauensdiensteanbieter</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-qtsp" aria-label="Erklärung: Qualifizierter Vertrauensdiensteanbieter">?</button>
+          <p id="i-qtsp" class="info" hidden>Sie stellen elektronische Signaturen, Siegel oder Zeitstempel mit dem behördlich geprüften Status „qualifiziert“ aus (nach der EU-Verordnung eIDAS), z. B. A-Trust. Solche Anbieter stehen auf der offiziellen EU-Vertrauensliste.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="special" value="tsp"> Vertrauensdiensteanbieter (nicht qualifiziert)</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-tsp" aria-label="Erklärung: Vertrauensdiensteanbieter">?</button>
+          <p id="i-tsp" class="info" hidden>Wie oben, aber ohne den Status „qualifiziert“: Sie bieten Kunden z. B. einfache elektronische Signaturen, Siegel oder Zeitstempel an. Eine Signatur-Software, die Sie nur selbst nutzen, zählt nicht.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="special" value="tld"> Verwaltung einer Domain-Endung (TLD-Namenregister)</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-tld" aria-label="Erklärung: TLD-Namenregister">?</button>
+          <p id="i-tld" class="info" hidden>Sie verwalten eine ganze Domain-Endung wie .at oder .wien, so wie nic.at für .at. Das betrifft nur sehr wenige Organisationen.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="special" value="dns"> DNS-Dienste für andere</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-dns" aria-label="Erklärung: DNS-Dienste">?</button>
+          <p id="i-dns" class="info" hidden>DNS übersetzt Domainnamen in Server-Adressen. Zutreffend, wenn Sie DNS für Kunden betreiben, z. B. als Webhoster oder Agentur, die die Domain-Einträge ihrer Kunden auf eigenen Nameservern verwaltet, oder wenn Sie einen öffentlichen DNS-Dienst anbieten. Gilt unabhängig von der Firmengröße. Nur die eigene Domain beim Provider zu verwalten zählt nicht.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="special" value="telekom"> Internet-, Telefon- oder Mobilfunkanbieter</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-telekom" aria-label="Erklärung: Kommunikationsanbieter">?</button>
+          <p id="i-telekom" class="info" hidden>Sie bieten der Öffentlichkeit Internetzugang, Telefonie oder andere elektronische Kommunikationsdienste an oder betreiben ein öffentliches Netz, auch als kleiner regionaler Anbieter. Ein Firmennetz oder WLAN nur für eigene Mitarbeiter zählt nicht.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="special" value="bund"> Bundesverwaltung</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-bund" aria-label="Erklärung: Bundesverwaltung">?</button>
+          <p id="i-bund" class="info" hidden>Ministerien, Bundesbehörden und Einrichtungen, die Aufgaben der Bundesverwaltung erfüllen. Gemeinden, Schulen und Universitäten zählen nicht.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="special" value="land"> Landesverwaltung</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-land" aria-label="Erklärung: Landesverwaltung">?</button>
+          <p id="i-land" class="info" hidden>Ämter der Landesregierungen, Bezirkshauptmannschaften und Einrichtungen, die Aufgaben der Landesverwaltung erfüllen. Gemeinden zählen hier nicht.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="special" value="kritisch"> Bescheid als „kritische Einrichtung“ erhalten</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-kritisch" aria-label="Erklärung: kritische Einrichtung">?</button>
+          <p id="i-kritisch" class="info" hidden>Nur ankreuzen, wenn Sie von der Behörde einen Bescheid erhalten haben, dass Ihr Unternehmen als kritische Einrichtung nach dem RKE-Gesetz (Resilienz kritischer Einrichtungen) gilt. Ohne Bescheid: nicht ankreuzen.</p>
+        </div>
+      </fieldset>
+
+      <!-- Frage 3 -->
+      <fieldset>
+        <legend>3. In welchen Branchen ist Ihr Unternehmen tätig?
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-branchen" aria-label="Erklärung zu Frage 3">?</button>
+        </legend>
+        <p id="i-branchen" class="info" hidden>Das Gesetz listet die betroffenen Branchen in zwei Anhängen auf: Anlage 1 (besonders kritisch) und Anlage 2 (weitere Branchen). Schon eine Nebentätigkeit kann reichen, z. B. eine Maschinenbaufirma, die nebenbei IT-Wartung für Kunden anbietet. Ausnahme: Bei Energie, Trinkwasser, Abwasser und Abfall zählt nur die Haupttätigkeit.</p>
+        <p class="hint">Mehrfachauswahl möglich. Trifft nichts zu, einfach weiter zu Frage 4.</p>
+
+        <h3>Besonders kritische Branchen (Anlage 1)</h3>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="energie"> Energie <span class="sub">Strom, Gas, Fernwärme, Erdöl, Wasserstoff, öffentliche E-Ladestationen</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-energie" aria-label="Erklärung: Energie">?</button>
+          <p id="i-energie" class="info" hidden>Z. B. Stromerzeuger, Netzbetreiber und Stromlieferanten, Gas- und Fernwärmeversorger, Betreiber öffentlich zugänglicher E-Ladestationen. Nicht erfasst: eine Photovoltaik-Anlage auf dem Firmendach, die nur Überschuss einspeist, und Ladestationen nur für eigene Mitarbeiter.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="verkehr"> Verkehr <span class="sub">Luft, Schiene, Schiff, Straße</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-verkehr" aria-label="Erklärung: Verkehr">?</button>
+          <p id="i-verkehr" class="info" hidden>Z. B. Fluglinien und Flughäfen, Eisenbahnunternehmen und Schienennetz-Betreiber, Schifffahrtsunternehmen und Häfen, Betreiber von Verkehrsleitsystemen auf der Straße. Normale Speditionen und Taxiunternehmen fallen nicht darunter.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="bankwesen"> Banken</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-bank" aria-label="Erklärung: Banken">?</button>
+          <p id="i-bank" class="info" hidden>Kreditinstitute, also Banken und Sparkassen.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="finanzmarkt"> Börsen und Clearingstellen</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-finanz" aria-label="Erklärung: Börsen und Clearingstellen">?</button>
+          <p id="i-finanz" class="info" hidden>Betreiber von Handelsplätzen wie Börsen und zentrale Gegenparteien, die Wertpapiergeschäfte abwickeln. Versicherungen, Vermögensberater und Zahlungsdienstleister sind keine eigene Branche in diesem Gesetz.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="gesundheit"> Gesundheitswesen <span class="sub">Krankenhäuser, Arztpraxen, Labore, Pharma</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-gesundheit" aria-label="Erklärung: Gesundheitswesen">?</button>
+          <p id="i-gesundheit" class="info" hidden>Krankenanstalten, Ordinationen und medizinische Labore, Pharma-Forschung und -Herstellung sowie Hersteller von Medizinprodukten, die in Gesundheitsnotlagen besonders wichtig sind. Reine Pflegeheime sind nicht erfasst.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="trinkwasser"> Trinkwasserversorgung</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-trinkwasser" aria-label="Erklärung: Trinkwasser">?</button>
+          <p id="i-trinkwasser" class="info" hidden>Lieferung und Verteilung von Trinkwasser als wesentlicher Teil Ihrer Tätigkeit, z. B. Wasserversorger und Wassergenossenschaften.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="abwasser"> Abwasser</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-abwasser" aria-label="Erklärung: Abwasser">?</button>
+          <p id="i-abwasser" class="info" hidden>Sammeln, Ableiten oder Reinigen von kommunalem, häuslichem oder industriellem Abwasser als wesentlicher Teil Ihrer Tätigkeit, z. B. Kläranlagen-Betreiber und Abwasserverbände.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="digitale_infrastruktur"> Digitale Infrastruktur <span class="sub">Cloud-Dienste und Online-Software, Rechenzentren, Internet-Knoten</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-digital" aria-label="Erklärung: Digitale Infrastruktur">?</button>
+          <p id="i-digital" class="info" hidden><strong>Cloud-Dienste:</strong> Sie bieten Rechenleistung, Speicher oder Software über das Internet zur Nutzung auf Abruf an. Auch Online-Software im Abo (Software-as-a-Service) zählt, selbst wenn sie bei Amazon, Microsoft &amp; Co. läuft. <strong>Rechenzentrum:</strong> Sie stellen Rechenzentrumsfläche für andere bereit. Ein Serverraum nur für die eigene Firma zählt nicht. <strong>Internet-Knoten:</strong> Austauschpunkt, an dem Internetanbieter ihre Netze verbinden. <strong>CDN:</strong> Netzwerk verteilter Server, das Webinhalte schnell ausliefert.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="ikt_b2b"> IT-Betreuung für andere Unternehmen <span class="sub">laufende IT-Wartung, IT-Sicherheitsdienste</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-msp" aria-label="Erklärung: IT-Betreuung">?</button>
+          <p id="i-msp" class="info" hidden>Sie installieren, betreiben, verwalten oder warten laufend IT-Systeme anderer Unternehmen, vor Ort oder per Fernzugriff, z. B. als IT-Dienstleister mit Wartungsvertrag („Managed Service Provider“) oder mit Sicherheitsdiensten wie Überwachung oder Firewall-Betrieb. Gilt auch für IT-Firmen, die nur Gesellschaften im eigenen Konzern betreuen. Reiner Hardware-Verkauf mit einmaliger Einrichtung zählt nicht.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="weltraum"> Weltraum</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-weltraum" aria-label="Erklärung: Weltraum">?</button>
+          <p id="i-weltraum" class="info" hidden>Betreiber von Bodeninfrastruktur für Weltraumdienste, z. B. Satelliten-Bodenstationen.</p>
+        </div>
+
+        <h3>Weitere Branchen (Anlage 2)</h3>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="post"> Post- und Kurierdienste</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-post" aria-label="Erklärung: Post- und Kurierdienste">?</button>
+          <p id="i-post" class="info" hidden>Unternehmen, die Briefe oder Pakete sammeln, sortieren, transportieren oder zustellen, einschließlich Kurier- und Expressdienste.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="abfall"> Abfallwirtschaft</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-abfall" aria-label="Erklärung: Abfallwirtschaft">?</button>
+          <p id="i-abfall" class="info" hidden>Sammeln, Transportieren, Verwerten oder Beseitigen von Abfällen als Haupttätigkeit. Wer nur eigenen Abfall entsorgt, zählt nicht.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="chemie"> Chemische Stoffe</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-chemie" aria-label="Erklärung: Chemische Stoffe">?</button>
+          <p id="i-chemie" class="info" hidden>Sie stellen chemische Stoffe oder Gemische her oder handeln damit.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="lebensmittel"> Lebensmittel <span class="sub">nur wenn Großhandel UND industrielle Herstellung</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-lebensmittel" aria-label="Erklärung: Lebensmittel">?</button>
+          <p id="i-lebensmittel" class="info" hidden>Nur erfasst, wenn Sie beides tun: Lebensmittel industriell herstellen oder verarbeiten UND im Großhandel vertreiben, also an Händler, Gastronomie oder andere Firmen statt an Endkunden. Ein Bäcker, der nur an Endkunden verkauft, fällt nicht darunter.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="verarbeitendes"> Herstellung bestimmter Produkte <span class="sub">Medizinprodukte, Elektronik, Elektrotechnik, Maschinen, Fahrzeuge</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-herstellung" aria-label="Erklärung: Herstellung">?</button>
+          <p id="i-herstellung" class="info" hidden>Sie stellen her: Medizinprodukte oder In-vitro-Diagnostika; Computer, elektronische oder optische Geräte; elektrische Ausrüstung wie Motoren, Batterien oder Kabel; Maschinen; Autos und Autoteile; sonstige Fahrzeuge wie Züge, Flugzeuge oder Schiffe. Zur Kontrolle: Ihre Branchencodes (ÖNACE C26 bis C30) stehen in der Klassifikationsmitteilung der Statistik Austria.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="digitale_dienste"> Online-Plattformen <span class="sub">Online-Marktplätze, Suchmaschinen, soziale Netzwerke</span></label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-plattformen" aria-label="Erklärung: Online-Plattformen">?</button>
+          <p id="i-plattformen" class="info" hidden>Online-Marktplatz heißt: eine Plattform, auf der andere Händler an Kunden verkaufen. Ein eigener Webshop, in dem nur Sie verkaufen, zählt nicht. Außerdem erfasst: Suchmaschinen und soziale Netzwerke.</p>
+        </div>
+        <div class="option">
+          <label><input type="checkbox" name="sector" value="forschung"> Forschungseinrichtungen</label>
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-forschung" aria-label="Erklärung: Forschung">?</button>
+          <p id="i-forschung" class="info" hidden>Organisationen, deren Hauptzweck angewandte Forschung oder Entwicklung ist, um die Ergebnisse wirtschaftlich zu nutzen. Bildungseinrichtungen wie Universitäten zählen nicht.</p>
+        </div>
+      </fieldset>
+
+      <!-- Frage 4 -->
+      <fieldset>
+        <legend>4. Wie groß ist Ihr Unternehmen?
+          <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-gruppe" aria-label="Erklärung: Unternehmensgruppen">?</button>
+        </legend>
+        <p id="i-gruppe" class="info" hidden><strong>Gehören Sie zu einer Unternehmensgruppe?</strong> Ist ein anderes Unternehmen zu mehr als 50 % an Ihnen beteiligt, oder Sie an ihm, zählen Sie dessen Mitarbeiter, Umsatz und Bilanzsumme voll dazu. Bei 25 bis 50 % Beteiligung anteilig. Beispiel: Ihre GmbH hat 30 Mitarbeiter, die Muttergesellschaft 200: Sie geben 230 an. Ausnahme: Ihre IT ist vollständig unabhängig von der Gruppe (§ 25 Abs. 4).</p>
+        <p class="hint">Werte aus dem letzten Jahresabschluss.</p>
+        <div class="grid">
+          <div class="field">
+            <div class="field-head">
+              <label for="employees">Mitarbeiter (in Vollzeit gerechnet)</label>
+              <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-ma" aria-label="Erklärung: Mitarbeiter">?</button>
+            </div>
+            <p id="i-ma" class="info" hidden>Teilzeit zählt anteilig, z. B. 20 von 40 Stunden = 0,5. Mitarbeitende Eigentümer zählen mit. Lehrlinge sowie Zeiten in Karenz zählen nicht.</p>
+            <input type="number" id="employees" min="0" step="0.1" inputmode="decimal" required>
+          </div>
+          <div class="field">
+            <div class="field-head">
+              <label for="turnover">Jahresumsatz in Mio. €</label>
+              <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-umsatz" aria-label="Erklärung: Jahresumsatz">?</button>
+            </div>
+            <p id="i-umsatz" class="info" hidden>Netto, also ohne Umsatzsteuer. Beispiel: 12,5 Millionen Euro = 12,5 eingeben.</p>
+            <input type="number" id="turnover" min="0" step="0.1" inputmode="decimal">
+          </div>
+          <div class="field">
+            <div class="field-head">
+              <label for="balance">Bilanzsumme in Mio. €</label>
+              <button type="button" class="info-btn" aria-expanded="false" aria-controls="i-bilanz" aria-label="Erklärung: Bilanzsumme">?</button>
+            </div>
+            <p id="i-bilanz" class="info" hidden>Die Summe aller Vermögenswerte (Aktiva) in Ihrer Bilanz. Sie steht im Jahresabschluss; im Zweifel weiß es Ihre Steuerberatung. Bei Einnahmen-Ausgaben-Rechnung gibt es keine Bilanz: Feld leer lassen.</p>
+            <input type="number" id="balance" min="0" step="0.1" inputmode="decimal">
+          </div>
+        </div>
+      </fieldset>
+
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <button type="submit">Ergebnis anzeigen</button>
+    </form>
+
+    <!-- Ergebnis: wird von app.js befüllt -->
+    <section id="result" aria-live="polite" hidden>
+      <div id="result-box" class="result-box">
+        <p class="eyebrow">Ihr Ergebnis</p>
+        <h2 id="result-title"></h2>
+        <p id="result-explain"></p>
+        <p id="result-size" class="meta"></p>
+        <h3>Begründung</h3>
+        <ul id="result-reasons"></ul>
+      </div>
+
+      <div id="obligations" hidden>
+        <p id="countdown" class="countdown"></p>
+
+        <h3>Fristen</h3>
+        <ul class="checklist">
+          <li><strong>Bis 31.12.2026: Registrierung</strong> im Unternehmensserviceportal (USP, usp.gv.at), Anmeldung z. B. mit ID Austria. Wer das versäumt, riskiert bis zu 50.000 € Strafe.</li>
+          <li><strong>Bis 30.09.2027: Selbstdeklaration</strong> (§ 33): eine Übersicht Ihrer umgesetzten Maßnahmen, als Formular im USP.</li>
+        </ul>
+
+        <h3>Gilt bereits seit 1.10.2026 – ohne Übergangsfrist</h3>
+        <ul class="checklist">
+          <li><strong>Sicherheitsmaßnahmen</strong> (§ 32): Risiken analysieren, Notfall- und Backup-Pläne, Sicherheit bei Lieferanten und IT-Dienstleistern, Anmeldung mit zweitem Faktor (z. B. App-Code), Verschlüsselung, Zugriffsrechte, Schulungen.</li>
+          <li><strong>Verantwortung der Geschäftsführung</strong> (§ 31): Geschäftsführung oder Vorstand muss selbst an einer Cybersicherheits-Schulung teilnehmen und die Umsetzung überwachen.</li>
+          <li><strong>Meldepflicht</strong> (§ 34): Ein schwerer Sicherheitsvorfall, z. B. ein Hackerangriff, der den Betrieb stört, muss binnen 24 Stunden an das zuständige Computer-Notfallteam (CSIRT) gemeldet werden – auch am Wochenende.</li>
+        </ul>
+        <p id="penalty" class="meta"></p>
+
+        <h3>Registrierung vorbereiten: Diese Angaben brauchen Sie</h3>
+        <p class="meta">Laut § 29 Abs. 2 NISG 2026. Wer alles bereitliegen hat, ist im USP in wenigen Minuten fertig.</p>
+        <ul class="todo">
+          <li>Name des Unternehmens, wie im Firmenbuch</li>
+          <li>Anschrift und aktuelle Kontaktdaten einer erreichbaren Ansprechperson (E-Mail, Telefon)</li>
+          <li>Ihre Branche(n) und Art der Einrichtung laut Anlage 1 oder 2 – siehe Ihr Ergebnis oben</li>
+          <li>Die EU-Länder, in denen Sie Ihre Dienste erbringen</li>
+          <li>Feste öffentliche IP-Adressbereiche, falls vorhanden (fragen Sie Ihren Internetanbieter oder IT-Dienstleister); Domainnamen können ergänzt werden</li>
+          <li>Anschrift der Hauptniederlassung und aller weiteren Niederlassungen in der EU</li>
+          <li>Mitarbeiterzahl, Jahresumsatz, Bilanzsumme und Ihre Einstufung als wesentliche oder wichtige Einrichtung</li>
+          <li>Eine Person mit Zugang zum USP, die für das Unternehmen handeln darf</li>
+        </ul>
+      </div>
+
+      <div id="next-step" class="cta no-print" hidden>
+        <h3>Wo steht Ihr Unternehmen bei diesen Pflichten?</h3>
+        <p>Der kostenlose Sicherheits-Selbstcheck zeigt in rund 10 Minuten, welche Maßnahmen schon vorhanden sind und wo Lücken sind – mit Ampel je Bereich und priorisierter Liste.</p>
+        <a class="button-link" href="gap.html">Zum Sicherheits-Selbstcheck</a>
+      </div>
+
+      <p id="extra-note" class="note" hidden></p>
+
+      <p class="disclaimer">Diese Ersteinschätzung ersetzt keine Rechtsberatung. Maßgeblich ist allein der Gesetzestext (NISG 2026, BGBl. I Nr. 94/2025). Stand: 25.10.2026.</p>
+      <div class="actions no-print">
+        <button type="button" id="print" class="secondary">Als PDF speichern / drucken</button>
+        <button type="button" id="restart" class="secondary">Neu starten</button>
+      </div>
+    </section>
+
+    <footer class="no-print">
+      <p>Quellen: <a href="https://www.ris.bka.gv.at/eli/bgbl/I/2025/94/20251223" rel="noopener">NISG 2026 im RIS</a> · <a href="https://www.wko.at/it-sicherheit/nis-faq" rel="noopener">WKO/BMI-FAQ</a></p>
+      <p><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
+    </footer>
+  </main>
+
+  <script src="logic.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

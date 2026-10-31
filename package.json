@@ -1,0 +1,9 @@
+{
+  "name": "nisg2026-check",
+  "private": true,
+  "type": "commonjs",
+  "description": "NISG 2026 (Austrian NIS2) applicability checker and security self-assessment",
+  "scripts": {
+    "test": "node test.js && node test-gap.js"
+  }
+}

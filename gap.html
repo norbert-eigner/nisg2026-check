@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sicherheits-Selbstcheck NISG 2026 – Wo steht Ihr Unternehmen?</title>
+  <meta name="description" content="Kostenloser Selbstcheck: 36 Fragen zu den Sicherheitsmaßnahmen nach NISG 2026 und NIS-Verordnung. Ergebnis mit Ampel und priorisierter Lückenliste, ohne Datenspeicherung.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="no-print-intro">
+      <p class="eyebrow">Österreich · NISG 2026 · Schritt 2</p>
+      <h1>Sicherheits-Selbstcheck</h1>
+      <p class="lead">Wie weit ist Ihr Unternehmen von den Pflichten des NISG 2026 entfernt? Beantworten Sie 36 Fragen in rund 10 Minuten und erhalten Sie eine Ampel je Bereich und eine Liste Ihrer wichtigsten Lücken.</p>
+      <p class="privacy">Ihre Antworten bleiben in Ihrem Browser. Nichts wird gespeichert oder übertragen. Unsicher bei einer Frage? Wählen Sie „Weiß nicht“ – das ist selbst schon ein Ergebnis.</p>
+      <p class="privacy">Noch nicht geprüft, ob Sie betroffen sind? <a href="index.html">Zuerst den NISG-2026-Check machen</a>.</p>
+    </header>
+
+    <!-- Fragen: werden von gap.js aus gap-data.js erzeugt -->
+    <form id="gap-form" novalidate>
+      <div id="questions"></div>
+      <p id="gap-progress" class="meta" aria-live="polite"></p>
+      <p id="gap-error" class="error" role="alert" hidden></p>
+      <button type="submit">Auswertung anzeigen</button>
+    </form>
+
+    <!-- Auswertung: wird von gap.js befüllt -->
+    <section id="gap-result" aria-live="polite" hidden>
+      <div id="gap-summary" class="result-box">
+        <p class="eyebrow">Ihr Ergebnis · <span id="gap-date"></span></p>
+        <h2 id="gap-title"></h2>
+        <p id="gap-text"></p>
+      </div>
+
+      <h3>Ergebnis je Bereich</h3>
+      <ul id="gap-areas" class="area-list"></ul>
+
+      <h3>Ihre wichtigsten Lücken</h3>
+      <p class="meta">Sortiert nach Dringlichkeit. „Sofort“ heißt: gesetzliche Frist oder hohes Schadensrisiko.</p>
+      <ol id="gap-list" class="gap-list"></ol>
+      <p id="gap-unknown" class="note" hidden></p>
+
+      <div class="cta no-print">
+        <h3>Feedback willkommen</h3>
+        <p>Dieser Selbstcheck ist ein unabhängiges, nicht-kommerzielles Projekt. Fehlt eine Frage, ist etwas unklar, oder möchten Sie Ihr Ergebnis kurz besprechen? Schreiben Sie mir.</p>
+        <a id="gap-contact" class="button-link" href="#">Feedback senden</a>
+        <p class="meta">Öffnet Ihr E-Mail-Programm mit Ihrem Ergebnis als Entwurf. Sie entscheiden, ob Sie es senden.</p>
+      </div>
+
+      <p class="disclaimer">Dieser Selbstcheck ist eine unverbindliche Orientierung und ersetzt weder eine Prüfung durch eine unabhängige Stelle noch eine Rechtsberatung. Grundlage: § 32 NISG 2026, NISV 2026 (BGBl. II Nr. 290/2026) und Anhang der Durchführungsverordnung (EU) 2024/2690. Stand: 25.10.2026.</p>
+      <div class="actions no-print">
+        <button type="button" id="gap-print" class="secondary">Als PDF speichern / drucken</button>
+        <button type="button" id="gap-edit" class="secondary">Antworten ändern</button>
+      </div>
+    </section>
+
+    <footer class="no-print">
+      <p><a href="index.html">NISG-2026-Check</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
+    </footer>
+  </main>
+
+  <script src="gap-data.js"></script>
+  <script src="gap-score.js"></script>
+  <script src="gap.js"></script>
+</body>
+</html>
